@@ -1,0 +1,17 @@
+# Agent Manifest — AgentRegistry entry point
+# This file is required for AgentRegistry auto-discovery (lazy-load architecture)
+
+id: "TEL-C2-097"
+name: "Telecom Field Technician Certification Access Evidence Router"
+namespace: "tel"
+version: "0.1.0"
+description: "Telecom Field Technician Certification Access Evidence Router"
+enabled: true
+category: "Cat 2"
+industry: "TEL"
+base_type: "DocGenerationAgent"  # RAGAgent | ChatAgent | ReActAgent | DocGenerationAgent
+class: "src.graph.graph.TelecomFieldTechnicianCertificationAccessEvidenceRouterAgent"
+required_trust_level: "VERIFIED_EXTERNAL"
+requires:
+  secrets: []
+  extras: []

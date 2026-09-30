@@ -1,0 +1,14 @@
+# Runtime configuration — separate from config/agent.yaml (static manifest).
+# agent.yaml = static identity/manifest (AgentRegistry discovery).
+# config.yaml = runtime parameters (retry/timeout/memory/HITL toggles).
+
+max_retry: 3
+memory_enabled: false
+timeout_s: 30
+
+# No HITL: this agent is advisory-routing only (5 deterministic routes, always
+# hands off to a human field-operations queue — see docs/02_design.md Design
+# Decision Record). There is no technical suspend/resume sign-off checkpoint
+# described in the proposal, so `interrupt()` is not used and `hitl:` is
+# intentionally omitted here (per the mandatory-disclaimer pattern, not HITL,
+# used when the proposal only asks for "human review" of output).
